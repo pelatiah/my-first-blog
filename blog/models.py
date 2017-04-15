@@ -8,6 +8,7 @@ class Post(models.Model):
     last_name = models.CharField(max_length=100)
     email = models.CharField(max_length=150)
     coms = models.TextField()
+    comment_preview = models.TextField()
     publish_date = models.DateTimeField(
             blank=True, null=True)
 
@@ -17,6 +18,9 @@ class Post(models.Model):
 
     def __str__(self):
         return self.title
+
+    def approved_comments(self):
+        return self.comments.filter(approved_comment=True)
 
 class Comment(models.Model):
     post = models.ForeignKey('blog.Post', related_name='comments')

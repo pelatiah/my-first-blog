@@ -7,14 +7,17 @@
       <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
       <link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
       <link rel="stylesheet" href="{% static 'css/blog.css' %}">
-
     </head>
     <body>
+    <div>
+
+    </div>
+    <div class="page">
         <div class="page-header">
         {% if user.is_authenticated %}
             <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
         {% endif %}
-            <h1><a href="">Pelatiah Blog</a> </h1>
+            <a href="{% url 'index' %}"><img src="static/images/platiah.jpg" alt="Pelatiah's blog"></a>
         </div>
 
         <div class="content container">
@@ -25,5 +28,6 @@
                 </div>
             </div>
         </div>
+    </div>
     </body>
  </html>
